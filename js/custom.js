@@ -10,15 +10,15 @@ $(document).ready(function(){
     
     let destaques = $('#featured') // id
 
-    console.log(titulos.first());
+   
 
     // Configuração de produtos
 
     $('.featured-item a').addClass('btn btn-dark stretch-link');
 
-    $('.featured-item:first h4').append('<span class="badge bg-secondary">Novo</span>')
-    // $('.featured-item:first h4').start('<span class="badge bg-secondary">Novo</span>')
-    // $('.featured-item:first h4').html('<span class="badge bg-secondary">Novo</span>')
+    $('.featured-item:first h4').append('<span class="badge bg-secondary">Promoção</span>')
+    // $('.featured-item:first h4').start('<span class="badge bg-secondary">Promoção</span>')
+    // $('.featured-item:first h4').html('<span class="badge bg-secondary">Promoção</span>')
     // $('.featured-item:first h4').addClass('active')
     // $('.featured-item:first h4').removeClass('active')
     // $('.featured-item:first h4').toggleClass('active')
@@ -26,13 +26,13 @@ $(document).ready(function(){
     // $('.featured-item:first h4').show()
     // $('.featured-item:first h4').fadeIn(2000)
     // $('.featured-item:first h4').fadeOut()
-    //  $('.featured-item:first h4').css('color', '#f00')
+    //  $('.featured-item:first h4').css('color', 'red')
      
-     $('.featured-item h4').dblclick( function(){
+     $('.featured-item h4').click( function(){
 
         $(this).css({
-            'color': '#f00',
-            'background': '#ff0',
+           
+            'color': 'red',
             'font-weight': '100',
         });
 
@@ -41,9 +41,10 @@ $(document).ready(function(){
      /*
       * Manipulação de eventos
       */
-     $('.featured-item a').on('blur', function(event){
+     $('.featured-item b').on('blur', function(event){
 
         event.preventDefault();
+        event.stopPropagation();
 
         alert('Produto esgotado');
 
